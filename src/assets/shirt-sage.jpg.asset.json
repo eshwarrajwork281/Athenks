@@ -2,7 +2,7 @@
   "version": 1,
   "asset_id": "3a90e43b-08ea-4f5b-a571-93fade252e0e",
   "project_id": "fc496f1d-577b-4bd5-9597-949097e89bfb",
-  "url": "/__l5e/assets-v1/3a90e43b-08ea-4f5b-a571-93fade252e0e/shirt_sage.jpg",
+  "url": "./src/assets/shirt_sage.jpg",
   "r2_key": "a/v1/fc496f1d-577b-4bd5-9597-949097e89bfb/3a90e43b-08ea-4f5b-a571-93fade252e0e/shirt_sage.jpg",
   "original_filename": "shirt_sage.jpg",
   "size": 127403,

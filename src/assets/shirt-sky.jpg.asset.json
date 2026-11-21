@@ -2,7 +2,7 @@
   "version": 1,
   "asset_id": "839c2819-53ad-4a63-bd7d-d6c5991038ee",
   "project_id": "fc496f1d-577b-4bd5-9597-949097e89bfb",
-  "url": "/__l5e/assets-v1/839c2819-53ad-4a63-bd7d-d6c5991038ee/shirt_sky.jpg",
+  "url": "./src/assets/shirt_sky.jpg",
   "r2_key": "a/v1/fc496f1d-577b-4bd5-9597-949097e89bfb/839c2819-53ad-4a63-bd7d-d6c5991038ee/shirt_sky.jpg",
   "original_filename": "shirt_sky.jpg",
   "size": 106748,
