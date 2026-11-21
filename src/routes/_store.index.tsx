@@ -32,7 +32,7 @@ function Home() {
     <>
       <section className="relative overflow-hidden">
         <div className="mx-auto flex min-h-[calc(100svh-64px)] max-w-7xl flex-col items-center justify-center px-4 py-12 md:min-h-[calc(100svh-80px)] md:px-8">
-          <p className="eyebrow text-subtle-foreground">Wholesale only · Kolkata</p>
+          <p className="eyebrow text-subtle-foreground">Wholesale no only · Kolkata</p>
 
           <div className="relative mt-8 flex w-full items-center justify-center">
             <p
