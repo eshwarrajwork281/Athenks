@@ -1,0 +1,228 @@
+/*
+ * Tailwind v4 entry. Keep every @import in this top block. Fonts load via <link> in __root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Athenks design system: strictly two colors.
+ *   Ink (charcoal) #2A2529  -> oklch(0.2716 0.0103 332.56)
+ *   Canvas (pale ivory) #F3F0E7 -> oklch(0.9550 0.0124 91.52)
+ * Every other tone is an opacity tint of ink. No gradients, no other hues.
+ */
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --color-ink: var(--ink);
+  --color-canvas: var(--canvas);
+  --color-ink-72: var(--ink-72);
+  --color-ink-50: var(--ink-50);
+  --color-ink-14: var(--ink-14);
+  --color-ink-10: var(--ink-10);
+  --color-ink-08: var(--ink-08);
+  --color-ink-05: var(--ink-05);
+  --color-canvas-72: var(--canvas-72);
+  --color-canvas-50: var(--canvas-50);
+  --color-canvas-14: var(--canvas-14);
+  --color-canvas-10: var(--canvas-10);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-pressed: var(--pressed);
+  --color-skeleton: var(--skeleton);
+  --color-scrim: var(--scrim);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--background);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 8px;
+  --ink: oklch(0.2716 0.0103 332.56);
+  --canvas: oklch(0.955 0.0124 91.52);
+  --ink-72: oklch(0.2716 0.0103 332.56 / 0.72);
+  --ink-50: oklch(0.2716 0.0103 332.56 / 0.5);
+  --ink-14: oklch(0.2716 0.0103 332.56 / 0.14);
+  --ink-10: oklch(0.2716 0.0103 332.56 / 0.1);
+  --ink-08: oklch(0.2716 0.0103 332.56 / 0.08);
+  --ink-05: oklch(0.2716 0.0103 332.56 / 0.05);
+  --canvas-72: oklch(0.955 0.0124 91.52 / 0.72);
+  --canvas-50: oklch(0.955 0.0124 91.52 / 0.5);
+  --canvas-14: oklch(0.955 0.0124 91.52 / 0.14);
+  --canvas-10: oklch(0.955 0.0124 91.52 / 0.1);
+
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: var(--canvas);
+  --card-foreground: var(--ink);
+  --popover: var(--canvas);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--canvas);
+  --secondary: var(--ink-05);
+  --secondary-foreground: var(--ink);
+  --muted: var(--ink-05);
+  --muted-foreground: var(--ink-72);
+  --subtle-foreground: var(--ink-50);
+  --accent: var(--ink-05);
+  --accent-foreground: var(--ink);
+  --pressed: var(--ink-10);
+  --skeleton: var(--ink-08);
+  --scrim: oklch(0.2716 0.0103 332.56 / 0.4);
+  --destructive: var(--ink);
+  --destructive-foreground: var(--canvas);
+  --border: var(--ink-14);
+  --input: var(--ink-14);
+  --ring: var(--ink);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  p, li, dd {
+    text-wrap: pretty;
+  }
+  em, i, cite, address {
+    font-style: normal;
+  }
+  input, select, textarea {
+    font-size: 16px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--ink);
+    color: var(--canvas);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Named type scale from the Athenks rulebook */
+@utility heading-1 {
+  font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.02em;
+  @media (width >= 48rem) { font-size: 48px; line-height: 48px; }
+}
+@utility heading-2 {
+  font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.02em;
+  @media (width >= 48rem) { font-size: 36px; line-height: 40px; }
+}
+@utility heading-3 {
+  font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em;
+  @media (width >= 48rem) { font-size: 30px; line-height: 36px; }
+}
+@utility heading-4 { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em; }
+@utility title-1 { font-size: 20px; line-height: 28px; font-weight: 500; }
+@utility title-2 { font-size: 18px; line-height: 28px; font-weight: 500; }
+@utility title-3 { font-size: 16px; line-height: 24px; font-weight: 500; }
+@utility body-1 { font-size: 16px; line-height: 24px; font-weight: 600; }
+@utility body-2 { font-size: 16px; line-height: 24px; font-weight: 400; }
+@utility body-3 { font-size: 14px; line-height: 20px; font-weight: 500; }
+@utility body-4 { font-size: 14px; line-height: 20px; font-weight: 400; }
+@utility button-lg { font-size: 18px; line-height: 28px; font-weight: 600; }
+@utility button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
+@utility button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
+@utility caption-1 { font-size: 12px; line-height: 16px; font-weight: 600; }
+@utility caption-2 { font-size: 12px; line-height: 16px; font-weight: 400; }
+@utility eyebrow {
+  font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+}
+
+/* Giant editorial wordmarks */
+@utility wordmark-hero {
+  font-weight: 600;
+  font-size: clamp(88px, 24vw, 340px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+@utility wordmark-footer {
+  font-weight: 600;
+  font-size: clamp(80px, 22vw, 320px);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+/* Calm motion + tactile press */
+@utility calm {
+  transition-property: transform, opacity, background-color, border-color, color;
+  transition-timing-function: var(--ease-calm);
+  transition-duration: 220ms;
+}
+@utility press {
+  transition-property: transform, opacity, background-color, border-color, color;
+  transition-timing-function: var(--ease-calm);
+  transition-duration: 220ms;
+  &:active:not(:disabled) { transform: scale(0.98); }
+}
+@utility mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@utility rise-in {
+  animation: rise-in 500ms var(--ease-calm) both;
+}
