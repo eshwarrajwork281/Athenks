@@ -90,7 +90,7 @@ export function SiteFooter() {
         <div className="mt-16 border-t border-canvas-14 pt-8 md:mt-20">
           <div className="flex items-end gap-4 overflow-hidden md:gap-8">
             <LogoMark className="mb-2 h-12 shrink-0 sm:h-20 md:h-28" />
-            <p aria-hidden="true" className="wordmark-footer select-none whitespace-nowrap">
+            <p aria-hidden="true" className="wordmark-footer select-none whitespace-nowrap text-[18.5vw]">
               Athenks
             </p>
           </div>

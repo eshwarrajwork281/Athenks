@@ -37,7 +37,7 @@ function Home() {
           <div className="relative mt-8 flex w-full items-center justify-center">
             <p
               aria-hidden="true"
-              className="wordmark-hero pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none whitespace-nowrap text-center text-foreground"
+              className="wordmark-hero pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-center text-foreground"
             >
               ATHENKS
             </p>
